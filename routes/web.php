@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Prototype;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,21 +15,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// All prototypes
+Route::get('/', function () 
+{
+    return view('prototypes', [
+        'heading' => 'Primeproduct Prototypes',
+        'prototypes' => Prototype::all()
+    ]);
 });
 
-Route::get('/hello', function () {
-    return response('<h1>Hello KC Samm</h1>', 200)
-        ->header('Content-Type', 'text/html')
-        ->header('foo', 'bar');
+// Single prototype
+Route::get('/prototypes/{id}', function($id) 
+{
+    return view('prototype', [
+        'prototype' => Prototype::find($id)
+    ]);
 });
 
-Route::get('/posts/{id}', function ($id) {
-    ddd($id);
-    return response('<h1>Post ' . $id . '</h1>');
-})->where('id', '[0-9]+');
 
-Route::get('/search', function (Request $request) {
-    return $request->name . ' ' . $request->city; 
-});
