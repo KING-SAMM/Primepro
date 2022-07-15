@@ -1,11 +1,24 @@
+@extends('layout')
+
+@section('content')
+
+
 @unless( $prototype == null )
 
 <h1>{{ $prototype['title'] }}</h1>
+<p>tags: {{ $prototype['tags'] }}</p>
 
-<p>{{ $prototype['description'] }} </p>
+<p style="font-size: 18px;">{{ $prototype['description'] }} </p>
+
+<h4>{{ $prototype['company'] }}</h4>
+<p>{{ $prototype['location'] }}</p>
+<p style="font-size: 14px;">{{ $prototype['email'] }}</p>
+<p style="font-size: 14px;">https://{{ $prototype['website'] }}</p>
 
 @else
 
 <p>Prototype not found.</p>
 
 @endunless
+
+@endsection

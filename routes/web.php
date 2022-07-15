@@ -19,7 +19,7 @@ use App\Models\Prototype;
 Route::get('/', function () 
 {
     return view('prototypes', [
-        'heading' => 'Primeproduct Prototypes',
+        'heading' => 'Prototypes Listings',
         'prototypes' => Prototype::all()
     ]);
 });
