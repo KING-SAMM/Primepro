@@ -2,6 +2,7 @@
 
 @section('content')
 
+<div class="u-clearfix u-sheet">
 
 @unless( $prototype == null )
 
@@ -20,5 +21,7 @@
 <p>Prototype not found.</p>
 
 @endunless
+
+</div>
 
 @endsection
