@@ -1,7 +1,9 @@
 @extends('layout')
 
 @section('content')
-    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+@include('partials._hero')
+@include('partials._search')
+    <div class="u-clearfix u-valign-middle u-sheet m-bottom">
         <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
             <h1>Prototypes Listings</h1>
             <div class="u-listings u-listings-1">
@@ -12,7 +14,7 @@
 
                         <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
                             <div class="proto-card">
-                                <img class="proto-card-image" src="images/logo-mockup-black-facade-sign_145275-281.jpg">
+                                <img class="proto-card-image" src="{{asset('images/logo-mockup-black-facade-sign_145275-281.jpg')}} ">
 
                                 <div class="proto-card-text" style="margin-left: 0px;">
                                     <a href="/prototypes/{{ $prototype->id }}">

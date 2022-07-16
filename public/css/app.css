@@ -27995,6 +27995,12 @@
   a.u-link.u-hover-grey-75:hover {
     color: #404040 !important;
   }
+
+  .bg-cobalt
+  {
+    background-color: #1E2E4D;
+  }
+
   .u-grey-80,
   .u-body.u-grey-80,
   section.u-grey-80:before,
