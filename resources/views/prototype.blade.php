@@ -8,7 +8,9 @@
 @unless( $prototype == null )
 
 <h1>{{ $prototype['title'] }}</h1>
-<p>{{ $prototype['tags'] }}</p>
+
+<x-prototype-tags :tagsCsv="$prototype->tags" />
+
 <div class="flex w-full flex-col md:flex-col lg:flex-row mt-10 lg:mt-15 px-2 ">
     {{-- Image  --}}
     <div class="flex-auto w-full lg:w-[40%] flex justify-center items-center">
