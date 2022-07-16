@@ -3,21 +3,23 @@
 @section('content')
 @include('partials._search')
 
-<div class="u-clearfix u-sheet">
+<div class="u-clearfix u-sheet pb-[50px]">
 
 @unless( $prototype == null )
+
 <h1>{{ $prototype['title'] }}</h1>
-<div class="flex w-full flex-col md:flex-col lg:flex-row ">
-    <div class="flex-auto w-full lg:w-[40%] sm:mx-auto">
+<p>{{ $prototype['tags'] }}</p>
+<div class="flex w-full flex-col md:flex-col lg:flex-row mt-10 lg:mt-15 px-2 ">
+    {{-- Image  --}}
+    <div class="flex-auto w-full lg:w-[40%] flex justify-center items-center">
         <img 
             src="{{asset('/images/logo-mockup-black-facade-sign_145275-281.jpg')}}"
-            class="sm:mx-auto"
+            class="w-full"
             alt="">
     </div>
-    <div class="flex-auto w-full lg:w-[60%] lg:ml-10 sm:mx-auto">
-        
-        <p>tags: {{ $prototype['tags'] }}</p>
-        
+    {{-- Details --}}
+    <div class="flex-auto w-full lg:w-[60%] lg:ml-10 text-center lg:text-justify sm:mx-auto">
+                
         <p style="font-size: 18px;">{{ $prototype['description'] }} </p>
         
         <h4>{{ $prototype['company'] }}</h4>

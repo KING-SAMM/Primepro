@@ -24,11 +24,11 @@ Route::get('/', function ()
     ]);
 });
 
-// Single prototype
-Route::get('/prototypes/{id}', function($id) 
+// Single prototype: Using Route-Model binding
+Route::get('/prototypes/{prototype}', function(Prototype $prototype) 
 {
     return view('prototype', [
-        'prototype' => Prototype::find($id)
+        'prototype' => $prototype
     ]);
 });
 
