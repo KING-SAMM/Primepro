@@ -8,7 +8,7 @@
 
     @foreach($tags as $tag)
 
-    <li {{ $attributes->merge(['class' => 'flex items-center justify-center proto-card text-white rounded-xl py-1 px-3 mr-2 text-xs']) }}>
+    <li {{ $attributes->merge(['class' => 'flex items-center justify-center proto-card text-white rounded-md py-1 px-3 mr-1 text-xs']) }}>
         <a href="/?tag={{$tag}}">
             {{$tag}}
         </a>

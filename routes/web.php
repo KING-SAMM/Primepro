@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PrototypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Prototype;
@@ -16,20 +17,9 @@ use App\Models\Prototype;
 */
 
 // All prototypes
-Route::get('/', function () 
-{
-    return view('prototypes', [
-        'heading' => 'Prototypes Listings',
-        'prototypes' => Prototype::all()
-    ]);
-});
+Route::get('/', [PrototypeController::class, 'index']);
 
 // Single prototype: Using Route-Model binding
-Route::get('/prototypes/{prototype}', function(Prototype $prototype) 
-{
-    return view('prototype', [
-        'prototype' => $prototype
-    ]);
-});
+Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
 
 
