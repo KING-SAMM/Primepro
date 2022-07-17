@@ -1,17 +1,14 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Prototype;
-use Illuminate\Http\Request;
 
 class PrototypeController extends Controller
 {
     // Get/Show all prototypes
     public function index()
     {
-        return view('prototypes', [
-            'heading' => 'Prototypes Listings',
+        return view('prototypes.index', [
             'prototypes' => Prototype::all()
         ]);
     }
@@ -19,7 +16,7 @@ class PrototypeController extends Controller
     // Get/Show single prototype
     public function show(Prototype $prototype)
     {
-        return view('prototype', [
+        return view('prototypes.show', [
             'prototype' => $prototype
         ]);
     }
