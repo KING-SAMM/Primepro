@@ -176,7 +176,7 @@
     <section class="u-align-center u-clearfix u-palette-1-dark-2 u-section-1" id="carousel_4e31">
       
     {{-- Content --}}
-    @yield('content')
+    {{ $slot }}
 
     </section> {{-- End Main Content Section  --}}
 

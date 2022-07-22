@@ -11,4 +11,18 @@ class Prototype extends Model
 {
     use HasFactory;
 
+    public function scopeFilter($query, array $filters)
+    {
+        if($filters['tag'] ?? false)
+        {
+            $query->where('tags', 'like', '%' . request('tag') . '%');
+        }
+
+        if($filters['search'] ?? false)
+        {
+            $query->where('tags', 'like', '%' . request('search') . '%')
+                ->orWhere('title', 'like', '%' . request('search') . '%')
+                ->orWhere('description', 'like', '%' . request('search') . '%');
+        }
+    }
 }

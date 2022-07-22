@@ -1,6 +1,5 @@
-@extends('layout')
+<x-layout>
 
-@section('content')
 @include('partials._hero')
 @include('partials._search')
     <div class="u-clearfix u-valign-middle u-sheet m-bottom">
@@ -26,4 +25,4 @@
         </div>  
     </div>
 
-@endsection
+</x-layout>

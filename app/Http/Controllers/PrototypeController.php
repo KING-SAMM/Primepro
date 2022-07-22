@@ -9,7 +9,7 @@ class PrototypeController extends Controller
     public function index()
     {
         return view('prototypes.index', [
-            'prototypes' => Prototype::all()
+            'prototypes' => Prototype::latest()->filter(request(['tag', 'search']))->get()
         ]);
     }
 
@@ -19,5 +19,11 @@ class PrototypeController extends Controller
         return view('prototypes.show', [
             'prototype' => $prototype
         ]);
+    }
+
+    // Show create prototype form
+    public function create(Prototype $prototype)
+    {
+        return view('prototypes.create');
     }
 }

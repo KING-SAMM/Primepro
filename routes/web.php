@@ -22,4 +22,8 @@ Route::get('/', [PrototypeController::class, 'index']);
 // Single prototype: Using Route-Model binding
 Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
 
+// Create prototype form
+Route::get('/prototypes/create', [PrototypeController::class, 'create']);
+
+
 
