@@ -182,6 +182,9 @@
 
     {{-- Footer  --}}
     <footer class="u-align-center u-clearfix u-footer u-footer mb-0 m-top bg-cobalt" id="sec-803e">
+        <a class="bg-[#3E5E6D] rounded-xl py-4" href="/prototypes/create">
+          <button class="px-8 text-white">Add New</button>
+        </a>
       {{-- <div class="u-clearfix u-sheet u-sheet-1"> --}}
         <p class="u-align-center u-text u-text-body-alt-color u-text-1">
           
