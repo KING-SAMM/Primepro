@@ -4,6 +4,7 @@
             <h2>Add a product prototype</h2>
         </header>
 
+        {{-- Begin Form --}}
         <form method="POST" action="/prototypes" class="p-6">
             @csrf
 

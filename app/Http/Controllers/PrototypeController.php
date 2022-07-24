@@ -48,6 +48,6 @@ class PrototypeController extends Controller
         // Create the data in the database 
         Prototype::create($formFields);
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Prototype created successfully');
     }
 }

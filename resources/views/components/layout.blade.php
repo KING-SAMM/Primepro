@@ -8,6 +8,7 @@
     <title>Prototype Listings</title>
     <link rel="stylesheet" href="/css/app.css" media="screen">
     <link rel="stylesheet" href="/css/home.css" media="screen">
+    <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   
     
@@ -208,6 +209,9 @@
         <span>studioeternal</span>
       </a>. 
     </section>
+
+    {{-- Flash message  --}}
+    <x-flash-message />
 
     {{-- <script src="/js/jquery.js"></script>
     <script defer src="/js/nicepage.js"></script> --}}
