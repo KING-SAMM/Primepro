@@ -22,6 +22,9 @@ Route::get('/', [PrototypeController::class, 'index']);
 // Create prototype form
 Route::get('/prototypes/create', [PrototypeController::class, 'create']);
 
+// Store 
+Route::post('/prototypes', [PrototypeController::class, 'store']);
+
 // Single prototype: Using Route-Model binding
 Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
 

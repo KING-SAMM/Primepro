@@ -11,6 +11,22 @@ class Prototype extends Model
 {
     use HasFactory;
 
+    // Allow mass assignment
+    // protected $fillable = 
+    // [
+    //     'title',
+    //     'image',
+    //     'company',
+    //     'location',
+    //     'email',
+    //     'website',
+    //     'tags',
+    //     'logo',
+    //     'description'
+    // ];
+
+    // Model::unguard(); was set in the boot() method within AppServiceProvider class to allow for mass assignment, so no need for the above
+
     public function scopeFilter($query, array $filters)
     {
         if($filters['tag'] ?? false)

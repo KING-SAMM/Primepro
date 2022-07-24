@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prototype;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PrototypeController extends Controller
 {
@@ -22,8 +24,30 @@ class PrototypeController extends Controller
     }
 
     // Show create prototype form
-    public function create(Prototype $prototype)
+    public function create()
     {
         return view('prototypes.create');
+    }
+
+    // Store prototype form data
+    public function store(Request $request)
+    {
+        // Validate form input data 
+        $formFields = $request->validate([
+            'title' => 'required',
+            // 'image' => 'required',
+            'company' => ['required', Rule::unique('prototypes', 'company')],
+            'location' => 'required',
+            'email' => ['required', 'email'],
+            'website' => 'required',
+            'tags' => 'required',
+            // 'logo' => 'required',
+            'description' => 'required'
+        ]);
+
+        // Create the data in the database 
+        Prototype::create($formFields);
+
+        return redirect('/');
     }
 }
