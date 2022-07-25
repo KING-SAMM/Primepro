@@ -14,7 +14,9 @@
                 {{-- Image  --}}
                 <div class="flex-auto w-full lg:w-[40%] flex justify-center items-center">
                     <img 
-                        src="{{asset('/images/logo-mockup-black-facade-sign_145275-281.jpg')}}"
+                        src="{{ $prototype->image 
+                        ? asset('storage/' . $prototype->image)
+                        : asset('/images/placeholder.png') }}"
                         class="w-full"
                         alt="">
                 </div>
@@ -22,11 +24,21 @@
                 <div class="flex-auto w-full lg:w-[60%] lg:ml-10 text-center lg:text-justify sm:mx-auto">
                             
                     <p style="font-size: 18px;">{{ $prototype['description'] }} </p>
-                    
-                    <h4>{{ $prototype['company'] }}</h4>
-                    <p>{{ $prototype['location'] }}</p>
-                    <p style="font-size: 14px;">{{ $prototype['email'] }}</p>
-                    <p style="font-size: 14px;">https://{{ $prototype['website'] }}</p>
+                    <div class="flex lg:flex-row flex-col">
+                        <div class="mt-2">
+                            <h4>{{ $prototype['company'] }}</h4>
+                            <p>{{ $prototype['location'] }}</p>
+                            <p style="font-size: 14px;">{{ $prototype['email'] }}</p>
+                            <p style="font-size: 14px;">{{ $prototype['website'] }}</p>
+                        </div>
+                        <div class="mx-auto">
+                            <img 
+                                src="{{ $prototype->logo ? asset('storage/' . $prototype->logo) : asset('/storage/logos/default-logo.png') }}" 
+                                alt="Company logo"
+                                width="200"
+                                class="mt-2">
+                        </div>
+                    </div>
                 </div>
             </div>
 

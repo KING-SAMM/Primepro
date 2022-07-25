@@ -25,4 +25,9 @@
         </div>  
     </div>
 
+    {{-- Pagination links  --}}
+    <div class="mt-6 p-4">
+        {{ $prototypes->links() }}
+    </div>
+
 </x-layout>

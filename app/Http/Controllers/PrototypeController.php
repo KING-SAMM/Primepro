@@ -11,7 +11,7 @@ class PrototypeController extends Controller
     public function index()
     {
         return view('prototypes.index', [
-            'prototypes' => Prototype::latest()->filter(request(['tag', 'search']))->get()
+            'prototypes' => Prototype::latest()->filter(request(['tag', 'search']))->paginate(10)
         ]);
     }
 
@@ -39,15 +39,28 @@ class PrototypeController extends Controller
             'company' => ['required', Rule::unique('prototypes', 'company')],
             'location' => 'required',
             'email' => ['required', 'email'],
+            // 'logo' => 'required',
             'website' => 'required',
             'tags' => 'required',
-            // 'logo' => 'required',
             'description' => 'required'
         ]);
+
+        // Check to see if image was uploaded
+        if($request->hasFile('image'))
+        {
+            $formFields['image'] = $request->file('image')->store('images', 'public');
+        }
+
+        // Check to see if logo was uploaded
+        if($request->hasFile('logo'))
+        {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
 
         // Create the data in the database 
         Prototype::create($formFields);
 
+        // Redirect to home page with flash message
         return redirect('/')->with('message', 'Prototype created successfully');
     }
 }

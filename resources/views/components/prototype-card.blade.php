@@ -2,7 +2,12 @@
 
 <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
     <x-card class="rounded-r-lg">
-        <img class="proto-card-image" src="{{asset('images/logo-mockup-black-facade-sign_145275-281.jpg')}} ">
+        <img 
+            class="proto-card-image" 
+            src="{{ $prototype->image 
+            ? asset('storage/' . $prototype->image)
+            : asset('/images/placeholder.png') }}"
+            >
 
         <div class="proto-card-text">
             <a href="/prototypes/{{ $prototype->id }}">
