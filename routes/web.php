@@ -22,8 +22,14 @@ Route::get('/', [PrototypeController::class, 'index']);
 // Create prototype form
 Route::get('/prototypes/create', [PrototypeController::class, 'create']);
 
-// Store 
+// Store prototype data
 Route::post('/prototypes', [PrototypeController::class, 'store']);
+
+// Edit prototype form data
+Route::get('/prototypes/{prototype}/edit', [PrototypeController::class, 'edit']);
+
+// Update prototype form data
+Route::put('/prototypes/{prototype}', [PrototypeController::class, 'update']);
 
 // Single prototype: Using Route-Model binding
 Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);

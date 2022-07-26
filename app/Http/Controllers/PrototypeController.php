@@ -23,7 +23,7 @@ class PrototypeController extends Controller
         ]);
     }
 
-    // Show create prototype form
+    // Show the create prototype form
     public function create()
     {
         return view('prototypes.create');
@@ -32,35 +32,76 @@ class PrototypeController extends Controller
     // Store prototype form data
     public function store(Request $request)
     {
-        // Validate form input data 
+        // Validate form input data (note that nullable 'logo' is excluded) 
+        // 'image' (not nullable) is also excluded
         $formFields = $request->validate([
             'title' => 'required',
-            // 'image' => 'required',
             'company' => ['required', Rule::unique('prototypes', 'company')],
             'location' => 'required',
             'email' => ['required', 'email'],
-            // 'logo' => 'required',
             'website' => 'required',
             'tags' => 'required',
             'description' => 'required'
         ]);
 
-        // Check to see if image was uploaded
+        // Now, check to see if image was uploaded
+        if($request->hasFile('image'))
+        {
+            // If true, create a form field for the image file and store in
+            // public/images
+            $formFields['image'] = $request->file('image')->store('images', 'public');
+        }
+
+        // Also check to see if logo was uploaded
+        if($request->hasFile('logo'))
+        {
+            // If true, create a form field for the logo file and store in
+            // public/logos
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        // Create all the form data in the database 
+        Prototype::create($formFields);
+
+        // Redirect to home page with flash message
+        return redirect('/')->with('message', 'Prototype created successfully');
+    }
+
+    // Show Edit form 
+    public function edit(Prototype $prototype)
+    {
+        return view('prototypes.edit', [
+            'prototype' => $prototype]);
+    }
+    // To update, pass the $prototype object as additional parameter
+    public function update(Request $request, Prototype $prototype)
+    {
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => 'required', // Remove unique rule for company here
+            'location' => 'required',
+            'email' => ['required', 'email'],
+            'website' => 'required',
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        // Check for image upload as before
         if($request->hasFile('image'))
         {
             $formFields['image'] = $request->file('image')->store('images', 'public');
         }
 
-        // Check to see if logo was uploaded
+        // Check for logo upload as before
         if($request->hasFile('logo'))
         {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        // Create the data in the database 
-        Prototype::create($formFields);
+        // Create data with the current prototype object instead of static method
+        $prototype->update($formFields);
 
-        // Redirect to home page with flash message
-        return redirect('/')->with('message', 'Prototype created successfully');
+        // Redirect back to orevious page with flash message
+        return back()->with('message', 'Prototype updated successfully');
     }
 }

@@ -11,19 +11,22 @@
             <x-prototype-tags :tagsCsv="$prototype->tags" />
 
             <div class="flex w-full flex-col md:flex-col lg:flex-row mt-10 lg:mt-15 px-2 ">
-                {{-- Image  --}}
+                {{-- Prototype Image  --}}
                 <div class="flex-auto w-full lg:w-[40%] flex justify-center items-center">
                     <img 
                         src="{{ $prototype->image 
                         ? asset('storage/' . $prototype->image)
                         : asset('/images/placeholder.png') }}"
                         class="w-full"
-                        alt="">
+                        alt="Porototype Image">
                 </div>
-                {{-- Details --}}
+                {{-- Prototype Details --}}
                 <div class="flex-auto w-full lg:w-[60%] lg:ml-10 text-center lg:text-justify sm:mx-auto">
-                            
+                    
+                    {{-- Description  --}}
                     <p style="font-size: 18px;">{{ $prototype['description'] }} </p>
+
+                    {{-- Company details and logo  --}}
                     <div class="flex lg:flex-row flex-col">
                         <div class="mt-2">
                             <h4>{{ $prototype['company'] }}</h4>
@@ -47,6 +50,16 @@
             <p>Prototype not found.</p>
 
         @endunless
+
+        {{-- Edit button  --}}
+        <div class="text-white border w-[100px] rounded absolute z-4 right-2 mt-4 px-4 py-2">
+            <a 
+                href="/prototypes/{{ $prototype->id }}/edit"
+                class="flex flex-row justify-around items-center"
+            >
+                <i class="fa-solid fa-pencil"></i> Edit
+            </a>
+        </div>
 
     </div>
 

@@ -1,12 +1,13 @@
 <x-layout>
     <x-card class="flex flex-col w-3/5 mx-auto my-8 rounded-xl">
         <header class="mb-4">
-            <h2>Add a product prototype</h2>
+            <h2>Edit {{ $prototype->title }}</h2>
         </header>
 
         {{-- Begin Form --}}
-        <form method="POST" action="/prototypes" enctype="multipart/form-data" class="p-6">
+        <form method="POST" action="/prototypes/{{ $prototype->id }}" enctype="multipart/form-data" class="p-6">
             @csrf
+            @method('PUT')
 
             <div class="mb-6">
                 <label class="inline-block text-lg mb-2" for="title">Prototype Title</label>
@@ -15,7 +16,7 @@
                     type="text" 
                     name="title" 
                     id="title" 
-                    value="{{ old('title') }}">
+                    value="{{ $prototype->title }}">
                 
                 @error('title')
                     <p class="text-red-300 text-xs mt-1">{{ $message }}</p>
@@ -29,7 +30,15 @@
                     type="file" 
                     name="image" 
                     id="image" 
-                    value="{{ old('image') }}">
+                    value="{{ $prototype->image }}">
+
+                <img 
+                    src="{{ $prototype->image 
+                    ? asset('storage/' . $prototype->image)
+                    : asset('/images/placeholder.png') }}"
+                    width="200"
+                    class="mt-4 mx-auto"
+                    alt="Porototype Image">
                 
                 @error('image')
                     <p class="text-red-300 text-xs mt-1">{{ $message }}</p>
@@ -43,7 +52,7 @@
                     type="text" 
                     name="company" 
                     id="company" 
-                    value="{{ old('company') }}"
+                    value="{{ $prototype->company }}"
                 >
                 
                 @error('company')
@@ -59,7 +68,7 @@
                     name="location" 
                     id="location" 
                     placeholder="E.g: Onitsha, Anambra, Nigeria"
-                    value="{{ old('location') }}"
+                    value="{{ $prototype->location }}"
                 >
                 
                 @error('location')
@@ -74,7 +83,7 @@
                     type="text" 
                     name="email" 
                     id="email" 
-                    value="{{ old('email') }}"
+                    value="{{ $prototype->email }}"
                 >
                 
                 @error('email')
@@ -89,9 +98,15 @@
                     type="file" 
                     name="logo" 
                     id="logo" 
-                    value="{{ old('logo') }}">
-                
-                    @error('logo')
+                    value="{{ $prototype->logo }}">
+
+                <img 
+                    src="{{ $prototype->logo ? asset('storage/' . $prototype->logo) : asset('/storage/logos/default-logo.png') }}" 
+                    alt="Company logo"
+                    width="200"
+                    class="mt-4 mx-auto">
+            
+                @error('logo')
                     <p class="text-red-300 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
@@ -104,7 +119,7 @@
                     name="website" 
                     id="website" 
                     placeholder="E.g: https://awesomedomain.com"
-                    value="{{ old('website') }}"
+                    value="{{ $prototype->website }}"
                 >
                 
                 @error('website')
@@ -120,7 +135,7 @@
                     name="tags" 
                     id="tags" 
                     placeholder="E.g: AI, anti-gravity"
-                    value="{{ old('tags') }}"
+                    value="{{ $prototype->tags }}"
                 >
                 
                 @error('tags')
@@ -137,7 +152,7 @@
                     class="text-gray-600 border border-indigo-200 rounded p-2 w-full"
                     placeholder="Write a detailed description of the product"
                 >
-                    {{ old('description') }}
+                    {{ $prototype->description }}
                 </textarea>
                 
                 @error('description')
@@ -146,7 +161,7 @@
             </div>
 
             <div class="mb-6">
-                <button class="bg-[#3E4E8D] rounded py-2 px-4 text-white hover:bg-[#1A2A39]">Create Prototype</button>
+                <button class="bg-[#3E4E8D] rounded py-2 px-4 text-white hover:bg-[#1A2A39]">Update Prototype</button>
             </div>
         </form>
     </x-card>

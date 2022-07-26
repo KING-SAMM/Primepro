@@ -6,6 +6,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>Prototype Listings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/app.css" media="screen">
     <link rel="stylesheet" href="/css/home.css" media="screen">
     <script src="//unpkg.com/alpinejs" defer></script>
@@ -53,7 +54,7 @@
         .proto-card-text p
         {
           line-height: 8px;
-          font-size: 12ox;
+          font-size: 12px;
         }
         .proto-card-text h4
         {
