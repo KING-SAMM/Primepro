@@ -51,14 +51,25 @@
 
         @endunless
 
-        {{-- Edit button  --}}
-        <div class="text-white border w-[100px] rounded absolute z-4 right-2 mt-4 px-4 py-2">
+        
+        <div class="flex flex-row justify-center items-center text-white w-[200px] absolute z-4 right-2 mt-4">
+            {{-- Edit  --}}
             <a 
                 href="/prototypes/{{ $prototype->id }}/edit"
-                class="flex flex-row justify-around items-center"
+                class="border px-4 py-2 rounded-l-lg"
             >
                 <i class="fa-solid fa-pencil"></i> Edit
             </a>
+
+            {{-- Dekete  --}}
+            <form method="POST" action="/prototypes/{{ $prototype->id }}" class="border px-4 py-2 rounded-r-lg">
+                @csrf
+                @method('DELETE')
+
+                <button class="text-red-400">
+                    <i class="fa-solid fa-trash"></i> Delete
+                </button>
+            </form>
         </div>
 
     </div>

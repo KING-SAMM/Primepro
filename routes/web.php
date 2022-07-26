@@ -31,6 +31,9 @@ Route::get('/prototypes/{prototype}/edit', [PrototypeController::class, 'edit'])
 // Update prototype form data
 Route::put('/prototypes/{prototype}', [PrototypeController::class, 'update']);
 
+// Delete prototype form data
+Route::delete('/prototypes/{prototype}', [PrototypeController::class, 'destroy']);
+
 // Single prototype: Using Route-Model binding
 Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
 

@@ -101,7 +101,16 @@ class PrototypeController extends Controller
         // Create data with the current prototype object instead of static method
         $prototype->update($formFields);
 
-        // Redirect back to orevious page with flash message
+        // Redirect back to current page with flash message
         return back()->with('message', 'Prototype updated successfully');
+    }
+
+    // Delete prototype data
+    public function destroy(Prototype $prototype)
+    {
+        $prototype->delete();
+
+        // Redirect back to home page with flash message
+        return redirect('/')->with('message', 'Prototype deleted successfully');
     }
 }
