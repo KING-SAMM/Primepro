@@ -1,7 +1,7 @@
 @props(['prototype'])
 
 <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-    <x-card class="rounded-r-lg">
+    <x-card class="proto-card rounded-r-lg">
         <img 
             class="proto-card-image" 
             src="{{ $prototype->image 

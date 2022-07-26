@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\PrototypeController;
+use App\Models\Prototype;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Prototype;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PrototypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Route::delete('/prototypes/{prototype}', [PrototypeController::class, 'destroy']
 // Single prototype: Using Route-Model binding
 Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
 
-
+// Show Register (create) form
+Route::get('/register', [UserController::class, 'create']);
 
 

@@ -44,10 +44,10 @@
         grid-area: card-text;
       }
 
-      .proto-card
+      /* .proto-card
       {
         background: #1E2E4D;
-      }
+      } */
 
       @media (min-width: 992px)
       {
@@ -154,8 +154,13 @@
                 </a>
               </li>
               <li class="u-nav-item">
-                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">
-                  Contact
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/register" style="padding: 10px 20px;">
+                  Register
+                </a>
+              </li>
+              <li class="u-nav-item">
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/login" style="padding: 10px 20px;">
+                  Login
                 </a>
               </li>
             </ul>
