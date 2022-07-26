@@ -90,21 +90,39 @@
             "card-text";
         }
       }
+
+      /* logo  */
+      .u-logo {
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        text-decoration: none;
+        border: 0 none transparent;
+        outline-width: 0;
+        background-color: transparent;
+        margin: 0;
+        -webkit-text-decoration-skip: objects;
+      }
     </style>
   </head>
   <body data-home-page="/" data-home-page-title="Prototypes" class="u-body u-xl-mode" data-lang="en">
 
     {{-- Begin Header --}}
-    <header class="u-clearfix u-header u-header" id="sec-3938">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <header class="" id="sec-3938">
+      <div class="u-clearfix relative w-full min-h-[60px] flex flex-row justify-between items-center ">
 
         {{-- Logo --}}
-        <a href="/" class="u-image u-logo u-image-1">
-          <img src="{{asset('/images/default-logo.png')}}" class="u-logo-image u-logo-image-1">
+        <a href="/" class="u-logo object-cover block align-middle bg-cover bg-no-repeat bg-center w-16 h-8 mr-auto ml-8 md:ml-12 lg:ml-16">
+          <img src="{{asset('/images/default-logo.png')}}" class="my-0 w-full h-full">
         </a>
 
         {{-- Begin Navigation  --}}
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1 ml-0 mr-auto absolute right-8 md:right-12 lg:right-16">
 
           {{-- Begin Collapsoble Menu Burger --}}
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
@@ -214,7 +232,7 @@
     {{-- Flash message  --}}
     <x-flash-message />
 
-    {{-- <script src="/js/jquery.js"></script>
-    <script defer src="/js/nicepage.js"></script> --}}
+    <script src="/js/jquery.js"></script>
+    <script defer src="/js/nicepage.js"></script>
 </body>
 </html>
