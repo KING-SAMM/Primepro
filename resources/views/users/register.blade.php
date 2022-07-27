@@ -77,7 +77,7 @@
             </div>
 
             <div class="mb-8">
-                <p>
+                <p class="text-xs">
                     Already have an account?
                     <a href="/login" class="text-blue-400">Login</a>
                 </p>

@@ -50,4 +50,32 @@ class UserController extends Controller
         // Redirect to home page with flash message
         return redirect('/')->with('message', 'You have been logged out');
     }
+
+    // Show login form
+    public function login()
+    {
+        return view('users.login');
+    }
+
+    // Authenticate and login User
+    public function authenticate(Request $request)
+    {
+        $formFields = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => 'required'
+        ]);
+
+        // Login user 
+        if (auth()->attempt($formFields))
+        {
+            // Regenerate session id
+            $request->session()->regenerate();
+
+            // Redirect to home
+            return redirect('/')->with('message', 'You are now logged in');
+        }
+
+        // If login attempt fails display error message only in email field
+        return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
+    }
 }
