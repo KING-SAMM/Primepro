@@ -60,6 +60,10 @@ class PrototypeController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
+        // Set the currently logged in user to user_id field 
+        // in prototype table in the database
+        $formFields['user_id'] = auth()->id();
+
         // Create all the form data in the database 
         Prototype::create($formFields);
 
