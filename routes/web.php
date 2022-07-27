@@ -41,4 +41,10 @@ Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
 // Show Register (create) form
 Route::get('/register', [UserController::class, 'create']);
 
+// Store created user 
+Route::post('/users', [UserController::class, 'store']);
+
+// Logout user 
+Route::post('/logout', [UserController::class, 'logout']);
+
 

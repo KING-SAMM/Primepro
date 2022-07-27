@@ -44,11 +44,6 @@
         grid-area: card-text;
       }
 
-      /* .proto-card
-      {
-        background: #1E2E4D;
-      } */
-
       @media (min-width: 992px)
       {
         .proto-card-text p
@@ -153,6 +148,32 @@
                   Gallery
                 </a>
               </li>
+
+              @auth
+
+              <li class="u-nav-item">
+                <span class="font-bold">
+                  Welcome {{ auth()->user()->name }}
+                </span> 
+                
+              </li>
+              <li class="u-nav-item">
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/prototypes/manage" style="padding: 10px 20px;">
+                  Manage Prototypes
+                </a>
+              </li>
+              <li class="u-nav-item">
+                <form method="POST" action="/logout" class="inline">
+                  @csrf
+                  <button type="submit">
+                    Logout
+                  </button>
+                </form>
+                </a>
+              </li>
+
+              @else
+
               <li class="u-nav-item">
                 <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/register" style="padding: 10px 20px;">
                   Register
@@ -163,6 +184,9 @@
                   Login
                 </a>
               </li>
+
+              @endauth
+
             </ul>
           </div> {{-- End Collapsible Menu Items --}}
 
@@ -183,8 +207,13 @@
                     </a>
                   </li>
                   <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="#">
-                      Contact
+                    <a class="u-button-style u-nav-link" href="/register">
+                      Register
+                    </a>
+                  </li>
+                  <li class="u-nav-item">
+                    <a class="u-button-style u-nav-link" href="/login">
+                      Login
                     </a>
                   </li>
                 </ul>
