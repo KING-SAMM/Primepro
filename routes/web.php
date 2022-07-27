@@ -21,19 +21,19 @@ use App\Http\Controllers\PrototypeController;
 Route::get('/', [PrototypeController::class, 'index']);
 
 // Create prototype form
-Route::get('/prototypes/create', [PrototypeController::class, 'create']);
+Route::get('/prototypes/create', [PrototypeController::class, 'create'])->middleware('auth');
 
 // Store prototype data
-Route::post('/prototypes', [PrototypeController::class, 'store']);
+Route::post('/prototypes', [PrototypeController::class, 'store'])->middleware('auth');
 
 // Edit prototype form data
-Route::get('/prototypes/{prototype}/edit', [PrototypeController::class, 'edit']);
+Route::get('/prototypes/{prototype}/edit', [PrototypeController::class, 'edit'])->middleware('auth');
 
 // Update prototype form data
-Route::put('/prototypes/{prototype}', [PrototypeController::class, 'update']);
+Route::put('/prototypes/{prototype}', [PrototypeController::class, 'update'])->middleware('auth');
 
 // Delete prototype form data
-Route::delete('/prototypes/{prototype}', [PrototypeController::class, 'destroy']);
+Route::delete('/prototypes/{prototype}', [PrototypeController::class, 'destroy'])->middleware('auth');
 
 // Single prototype: Using Route-Model binding
 Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
@@ -45,10 +45,10 @@ Route::get('/register', [UserController::class, 'create']);
 Route::post('/users', [UserController::class, 'store']);
 
 // Logout user 
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 // Show Login user form
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
 
 // Authenticate and Login user 
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
