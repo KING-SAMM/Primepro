@@ -117,4 +117,10 @@ class PrototypeController extends Controller
         // Redirect back to home page with flash message
         return redirect('/')->with('message', 'Prototype deleted successfully');
     }
+
+    // Manage Prototypes
+    public function manage()
+    {
+        return view('prototypes.manage', ['prototypes' => auth()->user()->prototypes()->get()]);
+    }
 }

@@ -17,6 +17,11 @@ use App\Http\Controllers\PrototypeController;
 |
 */
 
+
+/*
+| PROTOTYPE CONTROLLER
+---------------------------------------------*/
+
 // All prototypes
 Route::get('/', [PrototypeController::class, 'index']);
 
@@ -35,9 +40,17 @@ Route::put('/prototypes/{prototype}', [PrototypeController::class, 'update'])->m
 // Delete prototype form data
 Route::delete('/prototypes/{prototype}', [PrototypeController::class, 'destroy'])->middleware('auth');
 
+// Manage prototypes
+Route::get('/prototypes/manage', [PrototypeController::class, 'manage'])->middleware('auth');
+
 // Single prototype: Using Route-Model binding
 Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
 
+
+
+/*
+| USER CONTROLLER
+---------------------------------------------*/
 // Show Register (create) form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
