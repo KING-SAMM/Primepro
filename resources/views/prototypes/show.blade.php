@@ -38,8 +38,8 @@
                             <img 
                                 src="{{ $prototype->logo ? asset('storage/' . $prototype->logo) : asset('/storage/logos/default-logo.png') }}" 
                                 alt="Company logo"
-                                width="200"
-                                class="mt-2">
+                                width="150"
+                                class="mt-2 object-contain lg:object-contain">
                         </div>
                     </div>
                 </div>
@@ -50,27 +50,6 @@
             <p>Prototype not found.</p>
 
         @endunless
-
-        
-        <div class="flex flex-row justify-center items-center text-white w-[200px] absolute z-4 right-2 mt-4">
-            {{-- Edit  --}}
-            {{-- <a 
-                href="/prototypes/{{ $prototype->id }}/edit"
-                class="border px-4 py-2 rounded-l-lg"
-            >
-                <i class="fa-solid fa-pencil"></i> Edit
-            </a> --}}
-
-            {{-- Dekete  --}}
-            {{-- <form method="POST" action="/prototypes/{{ $prototype->id }}" class="border px-4 py-2 rounded-r-lg">
-                @csrf
-                @method('DELETE')
-
-                <button class="text-red-400">
-                    <i class="fa-solid fa-trash"></i> Delete
-                </button>
-            </form> --}}
-        </div>
 
     </div>
 

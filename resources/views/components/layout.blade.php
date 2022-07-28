@@ -60,10 +60,6 @@
 
       @media (min-width: 768px)
       {
-        .proto-card-image
-        {
-          object-fit:fill;
-        }
         .proto-card
         {
           display: grid;
@@ -169,7 +165,6 @@
                     Logout
                   </button>
                 </form>
-                </a>
               </li>
 
               @else
@@ -206,6 +201,25 @@
                       Gallery
                     </a>
                   </li>
+
+                  @auth
+
+                  <li class="u-nav-item">
+                    <a class="u-button-style u-nav-link" href="/prototypes/manage">
+                      Manage Prototypes
+                    </a>
+                  </li>
+                  <li class="u-nav-item">
+                    <form method="POST" action="/logout" class="inline">
+                      @csrf
+                      <button type="submit">
+                        Logout
+                      </button>
+                    </form>
+                  </li>
+
+                  @else
+
                   <li class="u-nav-item">
                     <a class="u-button-style u-nav-link" href="/register">
                       Register
@@ -216,6 +230,9 @@
                       Login
                     </a>
                   </li>
+
+                  @endauth
+
                 </ul>
               </div>
             </div>
@@ -227,7 +244,7 @@
 
 
     {{-- Begin Main Content Section  --}}
-    <section class="u-align-center u-clearfix u-palette-1-dark-2 u-section-1" id="carousel_4e31">
+    <section class="text-center text-white bg-[#425465] u-section-1" id="carousel_4e31">
       
     {{-- Content --}}
     {{ $slot }}
@@ -235,12 +252,12 @@
     </section> {{-- End Main Content Section  --}}
 
     {{-- Footer  --}}
-    <footer class="u-align-center u-clearfix u-footer u-footer mb-0 m-top bg-cobalt" id="sec-803e">
+    <footer class="text-center u-footer u-footer -mb-12 m-top bg-cobalt" id="sec-803e">
         <a class="bg-[#3E5E6D] rounded-xl py-4" href="/prototypes/create">
           <button class="px-8 text-white">Add New</button>
         </a>
       {{-- <div class="u-clearfix u-sheet u-sheet-1"> --}}
-        <p class="u-align-center u-text u-text-body-alt-color u-text-1">
+        <p class="text-center u-text u-text-body-alt-color u-text-1">
           
           <a href="#" class="u-none u-text-body-alt-color u-btn-1" target="_blank">
             PrimeProducts
@@ -248,7 +265,7 @@
         </p>
       {{-- </div> --}}
     </footer>
-    <section class="u-backlink u-clearfix mb-0 bg-cobalt">
+    <section class="u-backlink u-clearfix -mt-4 mb-0 bg-cobalt">
       <p class="u-text text-white">
         <span>&copy; 2022 by</span>
       </p>
