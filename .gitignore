@@ -17,7 +17,7 @@ yarn-error.log
 /.vscode
 tailwindcss.exe
 
-/public/css/
+# /public/css/
 /public/dist/
 .tailwindcss-manifest.json
 tailwindcss.exe
