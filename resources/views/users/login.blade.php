@@ -1,11 +1,11 @@
-<x-layout>
-    <x-card class="p-10 max-w-lg mx-auto mt-24">
+<x-layout class="py-24">
+    <x-card class="p-10 max-w-lg mx-auto mt-0">
         <header class="text-center">
             <h2 class="text-2xl font-bold mb-1">
                 Login
             </h2>
             <p class="mb-4">
-                log into your account to post prototypes
+                Log into your account to post prototypes
             </p>
         </header>
 

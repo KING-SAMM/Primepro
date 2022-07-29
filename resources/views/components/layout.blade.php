@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/app.css" media="screen">
     <link rel="stylesheet" href="/css/home.css" media="screen">
     <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
   
     
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -244,7 +244,7 @@
 
 
     {{-- Begin Main Content Section  --}}
-    <section class="text-center text-white bg-[#425465] u-section-1" id="carousel_4e31">
+    <section {{$attributes->merge(['class' => 'text-center text-white bg-[#425465] u-section-1" id="carousel_4e31'])}}>
       
     {{-- Content --}}
     {{ $slot }}

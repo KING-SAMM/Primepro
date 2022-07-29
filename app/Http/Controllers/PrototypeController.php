@@ -35,8 +35,8 @@ class PrototypeController extends Controller
         // Validate form input data (note that nullable 'logo' is excluded) 
         // 'image' (not nullable) is also excluded
         $formFields = $request->validate([
-            'title' => 'required',
-            'company' => ['required', Rule::unique('prototypes', 'company')],
+            'title' => ['required', Rule::unique('prototypes', 'title')],
+            'company' => 'required',
             'location' => 'required',
             'email' => ['required', 'email'],
             'website' => 'required',

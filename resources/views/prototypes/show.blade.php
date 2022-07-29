@@ -1,8 +1,8 @@
-<x-layout>
+<x-layout class="pt-1">
 
     @include('partials._search')
 
-    <div class="u-clearfix u-sheet pb-[50px]">
+    <div class="u-sheet pb-[50px]">
 
         @unless( $prototype == null )
 
@@ -16,7 +16,7 @@
                     <img 
                         src="{{ $prototype->image 
                         ? asset('storage/' . $prototype->image)
-                        : asset('/images/placeholder.png') }}"
+                        : asset('images/placeholder.png') }}"
                         class="w-full"
                         alt="Porototype Image">
                 </div>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="mx-auto">
                             <img 
-                                src="{{ $prototype->logo ? asset('storage/' . $prototype->logo) : asset('/storage/logos/default-logo.png') }}" 
+                                src="{{ $prototype->logo ? asset('storage/' . $prototype->logo) : asset('storage/logos/default-logo.png') }}" 
                                 alt="Company logo"
                                 width="150"
                                 class="mt-2 object-contain lg:object-contain">

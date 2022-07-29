@@ -44,7 +44,7 @@
                 <tr class="text-blue-300">
                     <td class="px-4 py-4 border-t border-b border-blue-300 text-md">
                         <p class="text-center">
-                            No portotypes found
+                            No prototypes found
                         </p>
                     </td>
                 </tr>
