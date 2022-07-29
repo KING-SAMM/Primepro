@@ -7,11 +7,11 @@
     <meta name="description" content="">
     <title>Prototype Listings</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/app.css" media="screen">
-    <link rel="stylesheet" href="/css/gallery.css" media="screen">
     <link rel="stylesheet" href="/css/home.css" media="screen">
+    <link rel="stylesheet" href="/css/gallery.css" media="screen">
+    @vite('resources/css/app.css')
     <script src="//unpkg.com/alpinejs" defer></script>
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+    <script src="https://cdn.tailwindcss.com"></script>
   
     
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -141,7 +141,7 @@
                 </a>
               </li>
               <li class="u-nav-item">
-                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/gallery" style="padding: 10px 20px;">
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/prototypes/gallery" style="padding: 10px 20px;">
                   Gallery
                 </a>
               </li>
@@ -198,7 +198,7 @@
                     </a>
                   </li>
                   <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="/gallery">
+                    <a class="u-button-style u-nav-link" href="/prototypes/gallery">
                       Gallery
                     </a>
                   </li>

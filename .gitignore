@@ -15,9 +15,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-tailwindcss.exe
-
-# /public/css/
-/public/dist/
-.tailwindcss-manifest.json
-tailwindcss.exe
+node_modules

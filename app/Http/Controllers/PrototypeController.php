@@ -123,4 +123,10 @@ class PrototypeController extends Controller
     {
         return view('prototypes.manage', ['prototypes' => auth()->user()->prototypes()->get()]);
     }
+
+    // Get/Show all prototypes
+    public function gallery()
+    {
+        return view('prototypes.gallery');
+    }
 }

@@ -46,6 +46,9 @@ Route::get('/prototypes/manage', [PrototypeController::class, 'manage'])->middle
 // Single prototype: Using Route-Model binding
 Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
 
+// Show prototypes gallery
+Route::get('/prototypes/gallery', [PrototypeController::class, 'gallery']);
+
 
 
 /*
