@@ -3,8 +3,8 @@
 @include('partials._hero')
 @include('partials._search')
     <div class="u-valign-middle u-sheet m-bottom">
-        <div class="w-full mx-0 u-gallery u-lightbox u-show-text-on-hover">
-            <h1>Prototypes Listings</h1>
+        <div class="w-full mx-0 u-gallery u-lightbox u-show-text-on-hover content-start">
+            <h2>Prototypes Listings</h2>
             <div class="grid h-full gap-4 grid-cols-2">
             
                 @unless( count($prototypes) == 0 )

@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout class="py-24">
     <x-card class="flex flex-col w-3/5 mx-auto my-8 rounded-xl">
         <header class="mb-4">
             <h2>Edit {{ $prototype->title }}</h2>

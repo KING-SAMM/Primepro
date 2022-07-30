@@ -15,6 +15,15 @@ class PrototypeController extends Controller
         ]);
     }
 
+    // Get/Show all prototypes
+    public function gallery()
+    {
+        return view('prototypes.gallery', [
+            'prototypes' => Prototype::all(),
+            'heading' => 'Gallery'
+        ]);
+    }
+
     // Get/Show single prototype
     public function show(Prototype $prototype)
     {
@@ -122,11 +131,5 @@ class PrototypeController extends Controller
     public function manage()
     {
         return view('prototypes.manage', ['prototypes' => auth()->user()->prototypes()->get()]);
-    }
-
-    // Get/Show all prototypes
-    public function gallery()
-    {
-        return view('prototypes.gallery');
     }
 }

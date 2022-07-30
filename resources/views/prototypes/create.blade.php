@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout class="py-16">
     <x-card class="flex flex-col w-3/5 mx-auto my-8 rounded-xl">
         <header class="mb-4">
             <h2>Add a product prototype</h2>

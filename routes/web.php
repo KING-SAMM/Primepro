@@ -25,6 +25,9 @@ use App\Http\Controllers\PrototypeController;
 // All prototypes
 Route::get('/', [PrototypeController::class, 'index']);
 
+// Show prototypes gallery
+Route::get('/prototypes/gallery', [PrototypeController::class, 'gallery']);
+
 // Create prototype form
 Route::get('/prototypes/create', [PrototypeController::class, 'create'])->middleware('auth');
 
@@ -46,8 +49,7 @@ Route::get('/prototypes/manage', [PrototypeController::class, 'manage'])->middle
 // Single prototype: Using Route-Model binding
 Route::get('/prototypes/{prototype}', [PrototypeController::class, 'show']);
 
-// Show prototypes gallery
-Route::get('/prototypes/gallery', [PrototypeController::class, 'gallery']);
+
 
 
 

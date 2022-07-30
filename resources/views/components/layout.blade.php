@@ -245,7 +245,7 @@
 
 
     {{-- Begin Main Content Section  --}}
-    <section {{$attributes->merge(['class' => 'text-center text-white bg-[#425465] u-section-1" id="carousel_4e31'])}}>
+    <section {{$attributes->merge(['class' => 'text-center text-white bg-[#425465] u-section-1"'])}}>
       
     {{-- Content --}}
     {{ $slot }}

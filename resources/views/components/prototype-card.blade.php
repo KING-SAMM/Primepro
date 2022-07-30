@@ -1,13 +1,15 @@
 @props(['prototype'])
 
 <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-    <x-card class="proto-card rounded-r-lg lg:h-[160px] ">
-        <img  
-            src="{{ $prototype->image 
-            ? asset('storage/' . $prototype->image)
-            : asset('/images/placeholder.png') }}"
-            class="proto-card-image object-cover lg:object-cover lg:h-[160px]"
-            />
+    <x-card class="proto-card rounded-r-lg lg:h-[160px]">
+        <div class="overflow-hidden">
+            <img  
+                src="{{ $prototype->image 
+                ? asset('storage/' . $prototype->image)
+                : asset('/images/placeholder.png') }}"
+                class="proto-card-image object-cover lg:object-cover lg:h-[160px] u-back-slide"
+                />
+        </div>
 
         <div class="proto-card-text">
             <a href="/prototypes/{{ $prototype->id }}">
