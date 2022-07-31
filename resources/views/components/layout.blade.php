@@ -12,6 +12,7 @@
     @vite('resources/css/app.css')
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    
   
     
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -183,6 +184,12 @@
 
               @endauth
 
+              <li class="u-nav-item">
+                <a class="bg-[#3E5E6D] rounded-lg py-[6px] px-4" href="/prototypes/create">
+                  <button class="text-xs text-white">Add New</button>
+                </a>
+              </li>
+
             </ul>
           </div> {{-- End Collapsible Menu Items --}}
 
@@ -253,20 +260,42 @@
     </section> {{-- End Main Content Section  --}}
 
     {{-- Footer  --}}
-    <footer class="text-center u-footer u-footer -mb-12 m-top bg-cobalt" id="sec-803e">
-        <a class="bg-[#3E5E6D] rounded-xl py-4" href="/prototypes/create">
-          <button class="px-8 text-white">Add New</button>
-        </a>
-      {{-- <div class="u-clearfix u-sheet u-sheet-1"> --}}
+    <footer class="u-footer u-footer -mb-12 m-top bg-[#1E2E4D] pt-4" id="sec-803e">
+        
+      <div class="u-clearfix u-sheet u-sheet-1"> 
+        <p class="text-center">
+          <a class="bg-[#3E5E6D] rounded-md py-2" href="/prototypes/create">
+            <button class="px-6 text-white">Add New</button>
+          </a>
+        </p>
         <p class="text-center u-text u-text-body-alt-color u-text-1">
           
           <a href="#" class="u-none u-text-body-alt-color u-btn-1" target="_blank">
             PrimeProducts
           </a>
         </p>
-      {{-- </div> --}}
+      </div> 
+      <div class="flex flex-row items-center justify-center text-xs">
+          <p class="u-text text-white px-1">
+            <span>&copy; 2022 by</span>
+          </p>
+          <a class="no-underline text-blue-100 hover:underline hover:text-blue-300 px-1" href="https://kcsamm.netlify.app" target="_blank">
+            <span>KC Samm</span>
+          </a>
+          <p class="u-text text-white px-1">
+            <span>for</span>
+          </p>
+          <a class="text-blue-100 no-underline hover:underline hover:text-blue-300 px-1" href="https://studioeternal.net" target="_blank">
+            <span>studioeternal</span>
+          </a>. 
+      </div>
     </footer>
-    <section class="u-backlink u-clearfix -mt-4 mb-0 bg-cobalt">
+    <!-- <section class="u-backlink u-clearfix -mt-4 mb-0 bg-[#425465]">
+      <p>
+        <a class="bg-[#3E5E6D] rounded-xl py-4" href="/prototypes/create">
+          <button class="px-8 text-white">Add New</button>
+        </a>
+      </p>
       <p class="u-text text-white">
         <span>&copy; 2022 by</span>
       </p>
@@ -279,7 +308,7 @@
       <a class="text-blue-100 no-underline hover:underline hover:text-blue-300" href="https://studioeternal.net" target="_blank">
         <span>studioeternal</span>
       </a>. 
-    </section>
+    </section> -->
 
     {{-- Flash message  --}}
     <x-flash-message />
